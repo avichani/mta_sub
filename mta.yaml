@@ -1,0 +1,44 @@
+ID: mtaUItest
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: ui5
+   type: html5
+   path: srcui/ui5
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: uaa_mtaUItest
+    - name: dest_mtaUItest
+
+
+ - name: m2
+   type: html5
+   path: srcui/m2
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: uaa_mtaUItest
+    - name: dest_mtaUItest
+
+resources:
+ - name: uaa_mtaUItest
+   parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+   type: org.cloudfoundry.managed-service
+
+ - name: dest_mtaUItest
+   parameters:
+      service-plan: lite
+      service: destination
+   type: org.cloudfoundry.managed-service
+
