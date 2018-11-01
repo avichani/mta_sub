@@ -5,7 +5,7 @@ version: 0.0.1
 modules:
  - name: ui5
    type: html5
-   path: srcui/ui5
+   path: /srcui/ui5
    parameters:
       disk-quota: 256M
       memory: 256M
@@ -18,7 +18,7 @@ modules:
 
  - name: m2
    type: html5
-   path: srcui/m2
+   path: /srcui/m2
    parameters:
       disk-quota: 256M
       memory: 256M
